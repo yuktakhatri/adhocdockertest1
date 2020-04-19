@@ -1,0 +1,45 @@
+#task1
+make a docker file (for parent process)
+##
+from alpine
+maintainer yukta
+cmd date "+%T"
+###
+
+2 build image with tag
+go to the directory where docker file is present using powershell the run command
+docker build -t alpine:yukta .
+
+3 running the container
+run the command in power shell
+docker run --name aditic1q1 -it --rm alpine:yukta  > question1.txt
+## the output will be stord in the file question1.txt
+
+#task2
+Build and push docker image to docker Hub
+ docker build -t adhoc:yukta .
+
+taging it:
+docker tag adhoc:yukta yuktadh/adhoc:yukta
+
+login:
+docker login
+
+pushing image:
+docker push yuktadh/adhoc:yukta
+
+#task3
+pulling image:
+docker pull dockerashu/ckad:v2
+building container:
+docker run --name yuktaj3q3 -p 6666:80 -d dockerashu/ckad:v2 
+
+
+
+#task5:
+creating volume:
+docker volume create yuktaq5
+
+attaching volume to container:
+docker run -it --name yukta5q15 -v yuktaq5:/etc/passwd- -v yuktaq51:/adhocvol/user.txt alpine sh
+
